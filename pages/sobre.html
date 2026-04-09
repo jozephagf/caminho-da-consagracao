@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sobre — Caminho da Consagração</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--g50:#eaf3de;--g100:#c0dd97;--g200:#97c459;--g400:#639922;--g600:#3b6d11;--g700:#27500a;--g800:#173404;--g900:#0d1f02;--gold:#c9a84c;--gold-l:#e8d49a;--cream:#f7f3ec;--parch:#f0e9da;--text:#1a2e08;--text2:#4a6030;--text3:#7a9058;--border:rgba(59,109,17,0.13)}
+html{scroll-behavior:smooth}body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--text);line-height:1.7}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--g50)}::-webkit-scrollbar-thumb{background:var(--g600);border-radius:3px}
+nav{position:sticky;top:0;z-index:200;background:var(--g900);border-bottom:1px solid rgba(201,168,76,0.2);padding:0 2.5rem;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:500;color:var(--gold-l);text-decoration:none;display:flex;align-items:center;gap:10px}
+.nav-links{display:flex;gap:2.25rem;align-items:center}.nav-links a{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(240,233,218,0.55);text-decoration:none;transition:color 0.2s}.nav-links a:hover,.nav-links a.active{color:var(--gold-l)}.nav-cta{border:1px solid rgba(201,168,76,0.4);padding:7px 16px;border-radius:2px;color:var(--gold-l)!important}
+@media(max-width:700px){.nav-links{display:none}}
+.page-header{background:var(--g900);padding:4rem 2.5rem 3rem;text-align:center}
+.page-eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
+.page-header h1{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,56px);font-weight:300;color:var(--parch);margin-bottom:.75rem}
+.page-header h1 em{font-style:italic;color:var(--gold-l)}
+.content{max-width:800px;margin:0 auto;padding:4rem 2.5rem 5rem}
+.intro{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--g700);line-height:1.75;margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+.intro strong{font-weight:500;color:var(--g800)}
+.section-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem;display:flex;align-items:center;gap:12px}
+.section-label::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--g100),transparent)}
+.body-text{font-size:14px;color:var(--text2);line-height:1.85;margin-bottom:1.5rem}
+.body-text strong{color:var(--g700);font-weight:500}
+.values-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:2rem 0 3rem}
+@media(max-width:500px){.values-grid{grid-template-columns:1fr}}
+.value-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:1.25rem}
+.value-icon{font-size:24px;margin-bottom:.6rem}
+.value-title{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:500;color:var(--g800);margin-bottom:4px}
+.value-desc{font-size:12px;color:var(--text2);line-height:1.6}
+.quote-block{background:var(--g800);border-radius:12px;padding:2rem 2.5rem;margin:2.5rem 0;text-align:center}
+.quote-text{font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;font-weight:300;color:rgba(240,233,218,0.75);line-height:1.8}
+.quote-author{font-size:12px;color:rgba(201,168,76,0.6);margin-top:1rem;letter-spacing:1px}
+.cta-area{text-align:center;margin-top:3rem}
+.cta-area p{font-size:14px;color:var(--text2);margin-bottom:1.25rem}
+.btn{display:inline-block;background:var(--g800);color:var(--gold-l);border:none;border-radius:6px;padding:12px 28px;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:500;cursor:pointer;text-decoration:none;transition:background .2s}
+.btn:hover{background:var(--g700)}
+.fade-in{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+footer{background:var(--g900);border-top:1px solid rgba(201,168,76,0.12)}
+.footer-bottom{max-width:1100px;margin:0 auto;padding:1.5rem 2.5rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+.footer-copy{font-size:12px;color:rgba(240,233,218,0.25)}.footer-jose{font-size:12px;color:rgba(201,168,76,0.4)}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../index.html">✝ Caminho da Consagração</a>
+  <div class="nav-links">
+    <a href="../index.html">Início</a>
+    <a href="consagracoes.html">Consagrações</a>
+    <a href="artigos.html">Artigos</a>
+    <a href="sobre.html" class="active">Sobre</a>
+    <a href="contato.html" class="nav-cta">Contato</a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-eyebrow">Conheça o blog</div>
+  <h1>Sobre o <em>Caminho</em></h1>
+</div>
+
+<div class="content">
+
+  <p class="intro fade-in">
+    O <strong>Caminho da Consagração</strong> nasceu de um desejo simples: tornar acessível a riqueza espiritual das consagrações católicas, ajudando fiéis a conhecerem, prepararem e realizarem esses atos de entrega a Deus.
+  </p>
+
+  <div class="section-label fade-in">Nossa missão</div>
+  <p class="body-text fade-in">Cada consagração é apresentada com <strong>profundidade histórica e teológica</strong>, mas também com orientações práticas e acessíveis — para que qualquer fiel, independentemente do nível de formação, possa percorrer esse caminho com confiança.</p>
+  <p class="body-text fade-in">O blog é inspirado na devoção a <strong>São José</strong>, o silencioso servidor de Deus, guardião da Sagrada Família e modelo de vida consagrada no cotidiano. Assim como ele trabalhou em silêncio e fidelidade, este espaço busca servir com humildade e dedicação.</p>
+
+  <div class="quote-block fade-in">
+    <div class="quote-text">"A consagração é o ato mais perfeito de adoração que um ser humano pode oferecer a Deus."</div>
+    <div class="quote-author">— São Luís Maria Grignion de Montfort</div>
+  </div>
+
+  <div class="section-label fade-in">Nossos valores</div>
+  <div class="values-grid fade-in">
+    <div class="value-card">
+      <div class="value-icon">✝️</div>
+      <div class="value-title">Fidelidade à Igreja</div>
+      <div class="value-desc">Todo conteúdo é fiel ao magistério da Igreja Católica e à tradição dos santos.</div>
+    </div>
+    <div class="value-card">
+      <div class="value-icon">📖</div>
+      <div class="value-title">Linguagem acessível</div>
+      <div class="value-desc">Profundidade teológica apresentada de forma simples e compreensível para todos.</div>
+    </div>
+    <div class="value-card">
+      <div class="value-icon">🌿</div>
+      <div class="value-title">Enraizamento na tradição</div>
+      <div class="value-desc">Devoções comprovadas pela história da Igreja e pelos testemunhos dos santos.</div>
+    </div>
+    <div class="value-card">
+      <div class="value-icon">🏠</div>
+      <div class="value-title">Espiritualidade do cotidiano</div>
+      <div class="value-desc">Consagrações que transformam a vida familiar e o dia a dia do fiel.</div>
+    </div>
+  </div>
+
+  <div class="cta-area fade-in">
+    <p>Tem sugestões, dúvidas ou quer contribuir com o blog?</p>
+    <a href="contato.html" class="btn">Fale conosco</a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2025 Caminho da Consagração</span>
+    <span class="footer-jose">🌿 Sob a proteção de São José</span>
+  </div>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*100);obs.unobserve(e.target)}})},{threshold:0.08});
+  document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

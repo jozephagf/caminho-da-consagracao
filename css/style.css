@@ -1,0 +1,98 @@
+/* ================================================
+   Caminho da Consagração — Estilos globais
+   ================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --g50: #eaf3de; --g100: #c0dd97; --g200: #97c459;
+  --g400: #639922; --g600: #3b6d11; --g700: #27500a;
+  --g800: #173404; --g900: #0d1f02;
+  --gold: #c9a84c; --gold-l: #e8d49a; --gold-d: #9a7a2e;
+  --cream: #f7f3ec; --parch: #f0e9da;
+  --text: #1a2e08; --text2: #4a6030; --text3: #7a9058;
+  --border: rgba(59,109,17,0.13);
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--text); line-height: 1.7; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--g50); }
+::-webkit-scrollbar-thumb { background: var(--g600); border-radius: 3px; }
+
+/* Fade-in animação */
+.fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* Nav */
+nav {
+  position: sticky; top: 0; z-index: 200;
+  background: var(--g900);
+  border-bottom: 1px solid rgba(201,168,76,0.2);
+  padding: 0 2.5rem;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px;
+}
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 21px; font-weight: 500;
+  color: var(--gold-l); text-decoration: none;
+  display: flex; align-items: center; gap: 10px;
+}
+.nav-links { display: flex; gap: 2.25rem; align-items: center; }
+.nav-links a {
+  font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+  color: rgba(240,233,218,0.55); text-decoration: none; transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--gold-l); }
+.nav-cta {
+  border: 1px solid rgba(201,168,76,0.4); padding: 7px 16px; border-radius: 2px;
+  color: var(--gold-l) !important;
+}
+
+/* Botões */
+.btn-primary {
+  background: var(--gold); color: var(--g900); border: none; border-radius: 2px;
+  padding: 12px 26px; font-size: 12px; font-weight: 500;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  cursor: pointer; text-decoration: none; display: inline-block; transition: background 0.2s;
+}
+.btn-primary:hover { background: var(--gold-l); }
+
+/* Footer */
+footer { background: var(--g900); border-top: 1px solid rgba(201,168,76,0.12); }
+.footer-main {
+  max-width: 1100px; margin: 0 auto; padding: 4rem 2.5rem 3rem;
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem;
+}
+.footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 500; color: var(--gold-l); margin-bottom: 1rem; }
+.footer-desc { font-size: 13px; color: rgba(240,233,218,0.4); line-height: 1.75; max-width: 260px; }
+.footer-col-title { font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+.footer-links { display: flex; flex-direction: column; gap: 8px; }
+.footer-links a { font-size: 13px; color: rgba(240,233,218,0.45); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--gold-l); }
+.footer-bottom {
+  border-top: 1px solid rgba(201,168,76,0.08); padding: 1.5rem 2.5rem;
+  max-width: 1100px; margin: 0 auto;
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;
+}
+.footer-copy { font-size: 12px; color: rgba(240,233,218,0.25); }
+.footer-jose { font-size: 12px; color: rgba(201,168,76,0.4); }
+
+/* Back to top */
+.back-top {
+  position: fixed; bottom: 2rem; right: 2rem; z-index: 100;
+  width: 42px; height: 42px; border-radius: 50%;
+  background: var(--g800); border: 1px solid rgba(201,168,76,0.3);
+  color: var(--gold); font-size: 18px; display: flex; align-items: center; justify-content: center;
+  cursor: pointer; text-decoration: none; opacity: 0; transition: opacity 0.3s, transform 0.2s;
+  transform: translateY(10px);
+}
+.back-top.show { opacity: 1; transform: translateY(0); }
+
+@media(max-width:900px){ .footer-main { grid-template-columns: 1fr 1fr; } }
+@media(max-width:700px){ .nav-links { display: none; } }

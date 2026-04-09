@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consagrações — Caminho da Consagração</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --g50:#eaf3de;--g100:#c0dd97;--g200:#97c459;--g400:#639922;--g600:#3b6d11;
+  --g700:#27500a;--g800:#173404;--g900:#0d1f02;
+  --gold:#c9a84c;--gold-l:#e8d49a;--gold-d:#9a7a2e;
+  --cream:#f7f3ec;--parch:#f0e9da;--text:#1a2e08;--text2:#4a6030;--text3:#7a9058;
+  --border:rgba(59,109,17,0.13);
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--text); line-height: 1.7; }
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--g50)}::-webkit-scrollbar-thumb{background:var(--g600);border-radius:3px}
+
+nav {
+  position: sticky; top: 0; z-index: 200; background: var(--g900);
+  border-bottom: 1px solid rgba(201,168,76,0.2);
+  padding: 0 2.5rem; display: flex; align-items: center; justify-content: space-between; height: 64px;
+}
+.nav-logo { font-family:'Cormorant Garamond',serif; font-size:21px; font-weight:500; color:var(--gold-l); text-decoration:none; display:flex; align-items:center; gap:10px; }
+.nav-links { display:flex; gap:2.25rem; align-items:center; }
+.nav-links a { font-size:11px; letter-spacing:2px; text-transform:uppercase; color:rgba(240,233,218,0.55); text-decoration:none; transition:color 0.2s; }
+.nav-links a:hover, .nav-links a.active { color:var(--gold-l); }
+.nav-cta { border:1px solid rgba(201,168,76,0.4); padding:7px 16px; border-radius:2px; color:var(--gold-l) !important; }
+@media(max-width:700px){ .nav-links{ display:none; } }
+
+.page-header { background:var(--g900); padding:4rem 2.5rem 3rem; text-align:center; }
+.page-eyebrow { font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:0.75rem; }
+.page-header h1 { font-family:'Cormorant Garamond',serif; font-size:clamp(36px,5vw,56px); font-weight:300; color:var(--parch); margin-bottom:0.75rem; }
+.page-header h1 em { font-style:italic; color:var(--gold-l); }
+.page-header p { font-size:14px; color:rgba(240,233,218,0.55); max-width:500px; margin:0 auto; }
+
+.filter-bar { background:var(--g800); padding:1rem 2.5rem; display:flex; gap:8px; flex-wrap:wrap; justify-content:center; border-bottom:1px solid rgba(201,168,76,0.1); }
+.filter-pill { font-size:11px; letter-spacing:1px; text-transform:uppercase; background:transparent; border:1px solid rgba(201,168,76,0.2); color:rgba(240,233,218,0.5); padding:6px 16px; border-radius:20px; cursor:pointer; transition:all 0.2s; }
+.filter-pill.active, .filter-pill:hover { background:rgba(201,168,76,0.15); color:var(--gold-l); border-color:rgba(201,168,76,0.4); }
+
+.content { max-width:1100px; margin:0 auto; padding:3.5rem 2.5rem 5rem; }
+
+.grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; }
+@media(max-width:900px){ .grid{ grid-template-columns:repeat(2,1fr); } }
+@media(max-width:500px){ .grid{ grid-template-columns:1fr; } }
+
+.card {
+  background:#fff; border:1px solid var(--border); border-radius:14px; overflow:hidden;
+  text-decoration:none; display:block; transition:transform 0.22s, border-color 0.22s, box-shadow 0.22s;
+}
+.card:hover { transform:translateY(-4px); border-color:var(--gold-d); box-shadow:0 6px 24px rgba(23,52,4,0.1); }
+.card-thumb { height:110px; background:var(--g900); display:flex; align-items:center; justify-content:center; font-size:48px; position:relative; }
+.card-thumb::after { content:''; position:absolute; inset:0; background:linear-gradient(to bottom, transparent 40%, rgba(13,31,2,0.7)); }
+.card-badge { position:absolute; bottom:10px; left:12px; z-index:1; font-size:9px; letter-spacing:1.5px; text-transform:uppercase; background:rgba(201,168,76,0.2); color:var(--gold-l); border:1px solid rgba(201,168,76,0.3); padding:3px 10px; border-radius:2px; }
+.card-body { padding:1.1rem 1.25rem 1.25rem; }
+.card-title { font-family:'Cormorant Garamond',serif; font-size:19px; font-weight:400; color:var(--g800); line-height:1.3; margin-bottom:6px; }
+.card-desc { font-size:12px; color:var(--text2); line-height:1.6; margin-bottom:10px; }
+.card-meta { display:flex; gap:12px; font-size:11px; color:var(--text3); }
+.card-dot { color:var(--gold-d); }
+
+.fade-in { opacity:0; transform:translateY(18px); transition:opacity 0.6s, transform 0.6s; }
+.fade-in.visible { opacity:1; transform:translateY(0); }
+
+footer { background:var(--g900); border-top:1px solid rgba(201,168,76,0.12); }
+.footer-bottom { max-width:1100px; margin:0 auto; padding:1.5rem 2.5rem; display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; }
+.footer-copy { font-size:12px; color:rgba(240,233,218,0.25); }
+.footer-jose { font-size:12px; color:rgba(201,168,76,0.4); }
+.back-top { position:fixed; bottom:2rem; right:2rem; z-index:100; width:42px; height:42px; border-radius:50%; background:var(--g800); border:1px solid rgba(201,168,76,0.3); color:var(--gold); font-size:18px; display:flex; align-items:center; justify-content:center; cursor:pointer; text-decoration:none; opacity:0; transition:opacity 0.3s,transform 0.2s; transform:translateY(10px); }
+.back-top.show { opacity:1; transform:translateY(0); }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../index.html">✝ Caminho da Consagração</a>
+  <div class="nav-links">
+    <a href="../index.html">Início</a>
+    <a href="consagracoes.html" class="active">Consagrações</a>
+    <a href="artigos.html">Artigos</a>
+    <a href="sobre.html">Sobre</a>
+    <a href="contato.html" class="nav-cta">Contato</a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-eyebrow">Catálogo completo</div>
+  <h1>Todas as <em>Consagrações</em></h1>
+  <p>Encontre a consagração certa para o seu momento espiritual e aprenda como realizá-la.</p>
+</div>
+
+<div class="filter-bar">
+  <button class="filter-pill active" onclick="filterCards('todos', this)">Todas</button>
+  <button class="filter-pill" onclick="filterCards('mariana', this)">Marianas</button>
+  <button class="filter-pill" onclick="filterCards('sagrado-coracao', this)">Sagrado Coração</button>
+  <button class="filter-pill" onclick="filterCards('sao-jose', this)">São José</button>
+  <button class="filter-pill" onclick="filterCards('arcanjos', this)">Arcanjos</button>
+  <button class="filter-pill" onclick="filterCards('familia', this)">Família</button>
+</div>
+
+<div class="content">
+  <div class="grid" id="grid">
+
+    <a class="card fade-in" href="consagracao-sao-miguel.html" data-cat="arcanjos">
+      <div class="card-thumb">⚔️<span class="card-badge">Arcanjos</span></div>
+      <div class="card-body">
+        <div class="card-title">Consagração a São Miguel Arcanjo</div>
+        <div class="card-desc">Novena de 9 dias e oração de consagração ao Príncipe das Milícias Celestes.</div>
+        <div class="card-meta"><span>9 dias</span><span class="card-dot">·</span><span>Proteção espiritual</span></div>
+      </div>
+    </a>
+
+    <a class="card fade-in" href="#" data-cat="mariana">
+      <div class="card-thumb">🌹<span class="card-badge">Mariana</span></div>
+      <div class="card-body">
+        <div class="card-title">Nossa Senhora — São Luís de Montfort</div>
+        <div class="card-desc">33 dias de preparo espiritual para a consagração total à Virgem Maria.</div>
+        <div class="card-meta"><span>33 dias</span><span class="card-dot">·</span><span>Consagração total</span></div>
+      </div>
+    </a>
+
+    <a class="card fade-in" href="#" data-cat="sagrado-coracao">
+      <div class="card-thumb">❤️<span class="card-badge">Sagrado Coração</span></div>
+      <div class="card-body">
+        <div class="card-title">Sagrado Coração de Jesus</div>
+        <div class="card-desc">A devoção revelada a Santa Margarida Maria Alacoque e como praticá-la.</div>
+        <div class="card-meta"><span>9 dias</span><span class="card-dot">·</span><span>Primeira sexta-feira</span></div>
+      </div>
+    </a>
+
+    <a class="card fade-in" href="#" data-cat="sao-jose">
+      <div class="card-thumb">🕊️<span class="card-badge">São José</span></div>
+      <div class="card-body">
+        <div class="card-title">Família a São José</div>
+        <div class="card-desc">Coloque seu lar sob a proteção do guardião da Sagrada Família.</div>
+        <div class="card-meta"><span>Celebração</span><span class="card-dot">·</span><span>Família</span></div>
+      </div>
+    </a>
+
+    <a class="card fade-in" href="#" data-cat="mariana">
+      <div class="card-thumb">⭐<span class="card-badge">Mariana</span></div>
+      <div class="card-body">
+        <div class="card-title">Imaculado Coração de Maria</div>
+        <div class="card-desc">A consagração pedida pela própria Nossa Senhora às pastorinhas de Fátima.</div>
+        <div class="card-meta"><span>Fátima</span><span class="card-dot">·</span><span>5 primeiros sábados</span></div>
+      </div>
+    </a>
+
+    <a class="card fade-in" href="#" data-cat="arcanjos">
+      <div class="card-thumb">🌟<span class="card-badge">Arcanjos</span></div>
+      <div class="card-body">
+        <div class="card-title">São Gabriel e São Rafael Arcanjos</div>
+        <div class="card-desc">Consagração aos mensageiros de Deus, intercessores da vida e da cura.</div>
+        <div class="card-meta"><span>9 dias</span><span class="card-dot">·</span><span>29 de setembro</span></div>
+      </div>
+    </a>
+
+    <a class="card fade-in" href="#" data-cat="familia">
+      <div class="card-thumb">🏠<span class="card-badge">Família</span></div>
+      <div class="card-body">
+        <div class="card-title">Consagração do Lar ao Sagrado Coração</div>
+        <div class="card-desc">Ritual para consagrar a casa ao Sagrado Coração de Jesus com a família reunida.</div>
+        <div class="card-meta"><span>Celebração</span><span class="card-dot">·</span><span>Lar cristão</span></div>
+      </div>
+    </a>
+
+    <a class="card fade-in" href="#" data-cat="mariana">
+      <div class="card-thumb">📿<span class="card-badge">Mariana</span></div>
+      <div class="card-body">
+        <div class="card-title">Nossa Senhora de Aparecida</div>
+        <div class="card-desc">Consagração à Padroeira do Brasil, com novena e oração tradicional.</div>
+        <div class="card-meta"><span>9 dias</span><span class="card-dot">·</span><span>12 de outubro</span></div>
+      </div>
+    </a>
+
+    <a class="card fade-in" href="#" data-cat="sao-jose">
+      <div class="card-thumb">🌿<span class="card-badge">São José</span></div>
+      <div class="card-body">
+        <div class="card-title">Consagração pessoal a São José</div>
+        <div class="card-desc">Entregue sua vida à intercessão do pai adotivo de Jesus.</div>
+        <div class="card-meta"><span>9 dias</span><span class="card-dot">·</span><span>19 de março</span></div>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2025 Caminho da Consagração</span>
+    <span class="footer-jose">🌿 Sob a proteção de São José</span>
+  </div>
+</footer>
+
+<a class="back-top" id="backTop" href="#top">↑</a>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e,i) => {
+      if(e.isIntersecting){ setTimeout(()=>e.target.classList.add('visible'),i*80); observer.unobserve(e.target); }
+    });
+  },{ threshold:0.08 });
+  document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+
+  window.addEventListener('scroll',()=>{
+    document.getElementById('backTop').classList.toggle('show',window.scrollY>300);
+  });
+
+  function filterCards(cat, btn){
+    document.querySelectorAll('.filter-pill').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.card').forEach(card=>{
+      const show = cat==='todos' || card.dataset.cat===cat;
+      card.style.display = show ? 'block' : 'none';
+    });
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consagração a São Miguel Arcanjo — Caminho da Consagração</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --green-50: #eaf3de;
+    --green-100: #c0dd97;
+    --green-200: #97c459;
+    --green-400: #639922;
+    --green-600: #3b6d11;
+    --green-700: #27500a;
+    --green-800: #173404;
+    --green-900: #0d1f02;
+    --gold: #c9a84c;
+    --gold-light: #e8d49a;
+    --cream: #f7f3ec;
+    --parchment: #f0e9da;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--cream);
+    color: var(--green-800);
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  /* ——— NAV ——— */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--green-900);
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+    padding: 0 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 60px;
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px; font-weight: 500;
+    color: var(--gold-light);
+    text-decoration: none;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .nav-logo .cross { color: var(--gold); font-size: 16px; }
+  .nav-links { display: flex; gap: 2rem; }
+  .nav-links a {
+    font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase;
+    color: rgba(240,233,218,0.6); text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold-light); }
+  @media(max-width:600px){ .nav-links { display: none; } }
+
+  /* ——— HERO ——— */
+  .hero {
+    background: var(--green-900);
+    position: relative; overflow: hidden;
+    padding: 5rem 2rem 4rem;
+    text-align: center;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.12) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .hero-cross {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 72px; color: rgba(201,168,76,0.18);
+    line-height: 1; margin-bottom: 1.5rem;
+    animation: fadeDown 0.8s ease both;
+  }
+  .hero-eyebrow {
+    font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 1rem;
+    animation: fadeDown 0.8s 0.1s ease both;
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 6vw, 62px);
+    font-weight: 300; line-height: 1.15;
+    color: var(--parchment);
+    margin-bottom: 1.25rem;
+    animation: fadeDown 0.8s 0.2s ease both;
+  }
+  .hero h1 em { font-style: italic; color: var(--gold-light); }
+  .hero-desc {
+    font-size: 15px; color: rgba(240,233,218,0.65);
+    max-width: 520px; margin: 0 auto 2rem;
+    animation: fadeDown 0.8s 0.3s ease both;
+  }
+  .hero-badges {
+    display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+    animation: fadeDown 0.8s 0.4s ease both;
+  }
+  .hero-badge {
+    font-size: 11px; letter-spacing: 1px;
+    border: 1px solid rgba(201,168,76,0.35);
+    color: var(--gold-light); padding: 6px 14px;
+    border-radius: 2px;
+  }
+
+  /* ——— DIVIDER ——— */
+  .divider {
+    text-align: center; padding: 2rem 0 0;
+    color: var(--gold); font-size: 18px; letter-spacing: 8px;
+  }
+
+  /* ——— CONTENT WRAPPER ——— */
+  .content {
+    max-width: 720px; margin: 0 auto;
+    padding: 3rem 2rem 5rem;
+  }
+
+  /* ——— SECTION LABEL ——— */
+  .section-label {
+    font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--green-400); font-weight: 500;
+    margin-bottom: 1.25rem;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .section-label::after {
+    content: ''; flex: 1; height: 1px;
+    background: linear-gradient(90deg, var(--green-100), transparent);
+  }
+
+  /* ——— INTRO BLOCK ——— */
+  .intro-block {
+    background: white;
+    border-left: 3px solid var(--gold);
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 3rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .intro-block p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px; font-weight: 400; line-height: 1.75;
+    color: var(--green-800);
+  }
+  .intro-block strong { font-weight: 600; color: var(--green-700); }
+
+  /* ——— STEPS ——— */
+  .phase { margin-bottom: 3rem; }
+  .phase-header {
+    display: flex; align-items: center; gap: 14px;
+    margin-bottom: 1.25rem;
+  }
+  .phase-num {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--green-800); color: var(--gold-light);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 500; flex-shrink: 0;
+    border: 1px solid rgba(201,168,76,0.4);
+  }
+  .phase-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 500; color: var(--green-800);
+  }
+  .phase-sub { font-size: 12px; color: var(--green-400); margin-top: 1px; }
+
+  .steps { display: flex; flex-direction: column; gap: 10px; }
+  .step {
+    background: white;
+    border: 1px solid rgba(59,109,17,0.12);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    display: flex; gap: 14px; align-items: flex-start;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .step:hover {
+    border-color: rgba(201,168,76,0.35);
+    box-shadow: 0 2px 12px rgba(23,52,4,0.06);
+  }
+  .step-icon {
+    width: 38px; height: 38px; border-radius: 6px;
+    background: var(--green-50); display: flex; align-items: center;
+    justify-content: center; font-size: 18px; flex-shrink: 0;
+  }
+  .step-title { font-size: 14px; font-weight: 500; margin-bottom: 3px; color: var(--green-800); }
+  .step-desc { font-size: 13px; color: #4a6030; line-height: 1.65; }
+
+  /* ——— NOVENA GRID ——— */
+  .novena-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 8px; margin-top: 1rem;
+  }
+  @media(max-width:500px){ .novena-grid { grid-template-columns: repeat(2,1fr); } }
+  .novena-day {
+    background: white;
+    border: 1px solid rgba(59,109,17,0.12);
+    border-radius: 8px; padding: 0.75rem;
+    transition: border-color 0.2s;
+  }
+  .novena-day:hover { border-color: var(--gold); }
+  .nd-num {
+    font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--gold); font-weight: 500; margin-bottom: 4px;
+  }
+  .nd-text { font-size: 12px; color: #4a6030; line-height: 1.5; }
+
+  /* ——— PRAYER ——— */
+  .prayer-card {
+    background: var(--green-900);
+    border-radius: 12px;
+    padding: 2.5rem;
+    margin: 2rem 0 3rem;
+    position: relative; overflow: hidden;
+  }
+  .prayer-card::before {
+    content: '✝';
+    position: absolute; right: 2rem; top: 1.5rem;
+    font-size: 80px; color: rgba(201,168,76,0.08);
+    pointer-events: none; line-height: 1;
+  }
+  .prayer-eyebrow {
+    font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 1rem;
+  }
+  .prayer-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px; font-weight: 400; color: var(--gold-light);
+    margin-bottom: 1.5rem;
+  }
+  .prayer-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px; font-weight: 300; font-style: italic;
+    color: rgba(240,233,218,0.85); line-height: 1.9;
+  }
+  .prayer-amen {
+    margin-top: 1.5rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px; font-weight: 600;
+    color: var(--gold-light); font-style: normal;
+  }
+
+  /* ——— TIPS ——— */
+  .tips { margin-bottom: 3rem; }
+  .tip-item {
+    display: flex; gap: 14px; align-items: flex-start;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid rgba(59,109,17,0.1);
+  }
+  .tip-item:last-child { border-bottom: none; }
+  .tip-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--gold); margin-top: 8px; flex-shrink: 0;
+  }
+  .tip-text { font-size: 14px; color: #4a6030; line-height: 1.65; }
+  .tip-text strong { color: var(--green-700); font-weight: 500; }
+
+  /* ——— OTHER CONSECRATIONS ——— */
+  .other-section { margin-bottom: 3rem; }
+  .other-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @media(max-width:500px){ .other-grid { grid-template-columns: 1fr; } }
+  .other-card {
+    background: white;
+    border: 1px solid rgba(59,109,17,0.12);
+    border-radius: 8px; padding: 1rem 1.25rem;
+    text-decoration: none; color: inherit;
+    display: flex; gap: 12px; align-items: flex-start;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .other-card:hover {
+    border-color: var(--gold);
+    box-shadow: 0 2px 12px rgba(23,52,4,0.07);
+  }
+  .other-icon { font-size: 22px; flex-shrink: 0; }
+  .other-tag { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: var(--green-400); margin-bottom: 3px; }
+  .other-name { font-size: 13px; font-weight: 500; color: var(--green-800); line-height: 1.4; }
+
+  /* ——— FOOTER ——— */
+  footer {
+    background: var(--green-900);
+    border-top: 1px solid rgba(201,168,76,0.15);
+    padding: 2.5rem 2rem;
+    text-align: center;
+  }
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; color: var(--gold-light); margin-bottom: 0.5rem;
+  }
+  .footer-sub { font-size: 12px; color: rgba(240,233,218,0.4); }
+
+  /* ——— ANIMATIONS ——— */
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-14px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .fade-in {
+    opacity: 0; transform: translateY(16px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#">
+    <span class="cross">✝</span> Caminho da Consagração
+  </a>
+  <div class="nav-links">
+    <a href="#">Início</a>
+    <a href="#">Consagrações</a>
+    <a href="#">Artigos</a>
+    <a href="#">Sobre</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-cross">⚔</div>
+  <div class="hero-eyebrow">Consagração a</div>
+  <h1><em>São Miguel</em><br>Arcanjo</h1>
+  <p class="hero-desc">Príncipe das Milícias Celestes, protetor da Igreja e intercessor poderoso contra o mal — aprenda como realizar esta consagração.</p>
+  <div class="hero-badges">
+    <span class="hero-badge">9 dias de preparo</span>
+    <span class="hero-badge">Festa: 29 de setembro</span>
+    <span class="hero-badge">Proteção espiritual</span>
+  </div>
+</div>
+
+<div class="divider">· · ·</div>
+
+<div class="content">
+
+  <!-- INTRO -->
+  <div class="section-label">O que é esta consagração</div>
+  <div class="intro-block fade-in">
+    <p>
+      Consagrar-se a São Miguel Arcanjo significa <strong>colocar-se sob sua proteção espiritual</strong>, pedindo que ele interceda por nós diante de Deus e nos defenda nas batalhas espirituais da vida. A tradição católica recomenda uma <strong>novena de 9 dias</strong> de preparo, seguida da oração de consagração no último dia.
+    </p>
+  </div>
+
+  <!-- FASE 1 -->
+  <div class="phase fade-in">
+    <div class="phase-header">
+      <div class="phase-num">1</div>
+      <div>
+        <div class="phase-title">Preparação interior</div>
+        <div class="phase-sub">Antes de começar a novena</div>
+      </div>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-icon">🕯️</div>
+        <div>
+          <div class="step-title">Escolha uma data</div>
+          <div class="step-desc">O ideal é terminar no dia 29 de setembro (festa de São Miguel) ou em qualquer sexta-feira, dia tradicional dos Arcanjos. Conte 9 dias para trás para saber quando começar a novena.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-icon">✝️</div>
+        <div>
+          <div class="step-title">Vá à confissão</div>
+          <div class="step-desc">Recomenda-se receber o sacramento da Reconciliação antes de iniciar, para realizar a consagração em estado de graça.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-icon">📿</div>
+        <div>
+          <div class="step-title">Prepare um espaço de oração</div>
+          <div class="step-desc">Monte um pequeno oratório com a imagem ou medalha de São Miguel, uma vela e o terço. Um ambiente de recolhimento favorece a oração.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FASE 2 -->
+  <div class="phase fade-in">
+    <div class="phase-header">
+      <div class="phase-num">2</div>
+      <div>
+        <div class="phase-title">Novena de São Miguel Arcanjo</div>
+        <div class="phase-sub">Dias 1 ao 9 — oração diária</div>
+      </div>
+    </div>
+    <div class="novena-grid">
+      <div class="novena-day"><div class="nd-num">Dia 1</div><div class="nd-text">Poder de Deus e servidão a São Miguel</div></div>
+      <div class="novena-day"><div class="nd-num">Dia 2</div><div class="nd-text">Proteção contra Satanás e os espíritos do mal</div></div>
+      <div class="novena-day"><div class="nd-num">Dia 3</div><div class="nd-text">Defesa da Igreja e do Papa</div></div>
+      <div class="novena-day"><div class="nd-num">Dia 4</div><div class="nd-text">Intercessão pelas almas do purgatório</div></div>
+      <div class="novena-day"><div class="nd-num">Dia 5</div><div class="nd-text">Fortaleza na batalha espiritual</div></div>
+      <div class="novena-day"><div class="nd-num">Dia 6</div><div class="nd-text">Proteção da família e do lar</div></div>
+      <div class="novena-day"><div class="nd-num">Dia 7</div><div class="nd-text">Humildade e obediência a Deus</div></div>
+      <div class="novena-day"><div class="nd-num">Dia 8</div><div class="nd-text">Perseverança na fé até a morte</div></div>
+      <div class="novena-day"><div class="nd-num">Dia 9</div><div class="nd-text">Consagração final — entrega total</div></div>
+    </div>
+  </div>
+
+  <!-- FASE 3 -->
+  <div class="phase fade-in">
+    <div class="phase-header">
+      <div class="phase-num">3</div>
+      <div>
+        <div class="phase-title">Oração de Consagração</div>
+        <div class="phase-sub">Recitada no Dia 9, de joelhos se possível</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="prayer-card fade-in">
+    <div class="prayer-eyebrow">Oração</div>
+    <div class="prayer-title">Consagração a São Miguel Arcanjo</div>
+    <div class="prayer-text">
+      Ó glorioso São Miguel Arcanjo, príncipe das milícias celestes, defensor das almas, vencedor de Lúcifer — eu me consagro hoje a vós e coloco sob vossa proteção minha alma, meu corpo, minha família e tudo o que me pertence.
+      <br><br>
+      Sede meu guarda, meu protetor e meu intercessor diante do trono de Deus. Defendei-me de todos os ataques do espírito maligno e conduzi-me, ao fim desta vida, à presença do Altíssimo.
+    </div>
+    <div class="prayer-amen">Amém.</div>
+  </div>
+
+  <!-- DICAS -->
+  <div class="section-label">Como viver a consagração</div>
+  <div class="tips fade-in">
+    <div class="tip-item">
+      <div class="tip-dot"></div>
+      <div class="tip-text">Reze a <strong>Oração de São Miguel</strong> (a curta, de Leão XIII) todos os dias após a consagração.</div>
+    </div>
+    <div class="tip-item">
+      <div class="tip-dot"></div>
+      <div class="tip-text">Use a <strong>medalha de São Miguel</strong> como sinal visível de sua consagração e proteção.</div>
+    </div>
+    <div class="tip-item">
+      <div class="tip-dot"></div>
+      <div class="tip-text">Renove a consagração anualmente no dia <strong>29 de setembro</strong>, festa dos Arcanjos.</div>
+    </div>
+    <div class="tip-item">
+      <div class="tip-dot"></div>
+      <div class="tip-text">Participe da Santa Missa nessa data sempre que possível.</div>
+    </div>
+    <div class="tip-item">
+      <div class="tip-dot"></div>
+      <div class="tip-text">Leia sobre a devoção nos escritos de <strong>São Pio de Pietrelcina</strong>, grande devoto de São Miguel.</div>
+    </div>
+  </div>
+
+  <!-- OUTRAS CONSAGRAÇÕES -->
+  <div class="other-section fade-in">
+    <div class="section-label">Outras consagrações</div>
+    <div class="other-grid">
+      <a class="other-card" href="#">
+        <div class="other-icon">🌹</div>
+        <div>
+          <div class="other-tag">Mariana</div>
+          <div class="other-name">Consagração a Nossa Senhora — método de São Luís de Montfort</div>
+        </div>
+      </a>
+      <a class="other-card" href="#">
+        <div class="other-icon">❤️</div>
+        <div>
+          <div class="other-tag">Sagrado Coração</div>
+          <div class="other-name">Consagração ao Sagrado Coração de Jesus</div>
+        </div>
+      </a>
+      <a class="other-card" href="#">
+        <div class="other-icon">🕊️</div>
+        <div>
+          <div class="other-tag">São José</div>
+          <div class="other-name">Consagração da família a São José</div>
+        </div>
+      </a>
+      <a class="other-card" href="#">
+        <div class="other-icon">⭐</div>
+        <div>
+          <div class="other-tag">Mariana</div>
+          <div class="other-name">Consagração ao Imaculado Coração de Maria — método de Fátima</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-logo">✝ Caminho da Consagração</div>
+  <div class="footer-sub">Sob a proteção de São José · Feito com fé e dedicação</div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

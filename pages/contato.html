@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contato — Caminho da Consagração</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--g50:#eaf3de;--g100:#c0dd97;--g400:#639922;--g600:#3b6d11;--g700:#27500a;--g800:#173404;--g900:#0d1f02;--gold:#c9a84c;--gold-l:#e8d49a;--cream:#f7f3ec;--parch:#f0e9da;--text:#1a2e08;--text2:#4a6030;--text3:#7a9058;--border:rgba(59,109,17,0.13)}
+html{scroll-behavior:smooth}body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--text);line-height:1.7}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--g50)}::-webkit-scrollbar-thumb{background:var(--g600);border-radius:3px}
+nav{position:sticky;top:0;z-index:200;background:var(--g900);border-bottom:1px solid rgba(201,168,76,0.2);padding:0 2.5rem;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:500;color:var(--gold-l);text-decoration:none;display:flex;align-items:center;gap:10px}
+.nav-links{display:flex;gap:2.25rem;align-items:center}.nav-links a{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(240,233,218,0.55);text-decoration:none;transition:color 0.2s}.nav-links a:hover,.nav-links a.active{color:var(--gold-l)}.nav-cta{border:1px solid rgba(201,168,76,0.4);padding:7px 16px;border-radius:2px;color:var(--gold-l)!important}
+@media(max-width:700px){.nav-links{display:none}}
+.page-header{background:var(--g900);padding:4rem 2.5rem 3rem;text-align:center}
+.page-eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
+.page-header h1{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,56px);font-weight:300;color:var(--parch);margin-bottom:.75rem}
+.page-header h1 em{font-style:italic;color:var(--gold-l)}
+.page-header p{font-size:14px;color:rgba(240,233,218,0.55);max-width:500px;margin:0 auto}
+.content{max-width:900px;margin:0 auto;padding:4rem 2.5rem 5rem}
+.contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:3rem;align-items:start}
+@media(max-width:700px){.contact-grid{grid-template-columns:1fr}}
+.contact-info-title{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;color:var(--g800);margin-bottom:1rem}
+.contact-desc{font-size:14px;color:var(--text2);line-height:1.8;margin-bottom:2rem}
+.ci{display:flex;gap:12px;align-items:center;margin-bottom:1rem}
+.ci-icon{width:40px;height:40px;border-radius:8px;background:var(--g50);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.ci-label{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text3)}
+.ci-value{font-size:13px;color:var(--g800)}
+.form-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:2rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+@media(max-width:500px){.form-row{grid-template-columns:1fr}}
+.form-group{margin-bottom:12px}
+label{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text3);display:block;margin-bottom:5px}
+input,textarea,select{width:100%;background:var(--cream);border:1px solid var(--border);border-radius:6px;padding:10px 14px;font-size:13px;color:var(--text);font-family:'Jost',sans-serif;outline:none;transition:border-color .2s}
+input:focus,textarea:focus,select:focus{border-color:var(--g400)}
+textarea{min-height:120px;resize:vertical}
+.submit-btn{background:var(--g800);color:var(--gold-l);border:none;border-radius:6px;padding:12px 28px;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:500;cursor:pointer;font-family:'Jost',sans-serif;transition:background .2s}
+.submit-btn:hover{background:var(--g700)}
+#form-ok{display:none;font-size:13px;color:var(--g600);padding:10px 0}
+.fade-in{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}.fade-in.visible{opacity:1;transform:translateY(0)}
+footer{background:var(--g900);border-top:1px solid rgba(201,168,76,0.12)}.footer-bottom{max-width:1100px;margin:0 auto;padding:1.5rem 2.5rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem}.footer-copy{font-size:12px;color:rgba(240,233,218,0.25)}.footer-jose{font-size:12px;color:rgba(201,168,76,0.4)}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="../index.html">✝ Caminho da Consagração</a>
+  <div class="nav-links">
+    <a href="../index.html">Início</a>
+    <a href="consagracoes.html">Consagrações</a>
+    <a href="artigos.html">Artigos</a>
+    <a href="sobre.html">Sobre</a>
+    <a href="contato.html" class="nav-cta active">Contato</a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-eyebrow">Fale conosco</div>
+  <h1>Entre em <em>Contato</em></h1>
+  <p>Dúvidas, sugestões de consagrações ou pedidos de oração — estamos aqui.</p>
+</div>
+
+<div class="content">
+  <div class="contact-grid">
+    <div class="fade-in">
+      <h2 class="contact-info-title">Como podemos ajudar?</h2>
+      <p class="contact-desc">Tem alguma consagração que gostaria de ver no blog? Uma dúvida sobre como realizar um rito? Ou quer simplesmente nos contar sua experiência espiritual? Escreva para nós.</p>
+      <div class="ci"><div class="ci-icon">✉️</div><div><div class="ci-label">E-mail</div><div class="ci-value">contato@caminhodaconsagracao.com.br</div></div></div>
+      <div class="ci"><div class="ci-icon">📖</div><div><div class="ci-label">Pedidos de oração</div><div class="ci-value">Use o formulário ao lado</div></div></div>
+      <div class="ci"><div class="ci-icon">💡</div><div><div class="ci-label">Sugestões</div><div class="ci-value">Toda devoção é bem-vinda</div></div></div>
+    </div>
+    <div class="fade-in">
+      <div class="form-card">
+        <form id="contactForm">
+          <div class="form-row">
+            <div><label>Nome</label><input type="text" placeholder="Seu nome"></div>
+            <div><label>E-mail</label><input type="email" placeholder="seu@email.com"></div>
+          </div>
+          <div class="form-group">
+            <label>Assunto</label>
+            <select>
+              <option value="">Selecione...</option>
+              <option>Sugestão de consagração</option>
+              <option>Pedido de oração</option>
+              <option>Dúvida espiritual</option>
+              <option>Outros</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Mensagem</label>
+            <textarea placeholder="Sua mensagem..."></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Enviar mensagem</button>
+          <div id="form-ok">✓ Mensagem enviada com sucesso! Responderemos em breve.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2025 Caminho da Consagração</span>
+    <span class="footer-jose">🌿 Sob a proteção de São José</span>
+  </div>
+</footer>
+
+<script>
+  const obs=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*100);obs.unobserve(e.target)}})},{threshold:0.08});
+  document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+  document.getElementById('contactForm').addEventListener('submit',e=>{
+    e.preventDefault();
+    document.getElementById('form-ok').style.display='block';
+    e.target.querySelectorAll('input,textarea,select').forEach(f=>f.value='');
+  });
+</script>
+</body>
+</html>

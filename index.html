@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caminho da Consagração — Blog Católico</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --g50: #eaf3de; --g100: #c0dd97; --g200: #97c459;
+  --g400: #639922; --g600: #3b6d11; --g700: #27500a;
+  --g800: #173404; --g900: #0d1f02;
+  --gold: #c9a84c; --gold-l: #e8d49a; --gold-d: #9a7a2e;
+  --cream: #f7f3ec; --parch: #f0e9da; --white: #ffffff;
+  --text: #1a2e08; --text2: #4a6030; --text3: #7a9058;
+  --border: rgba(59,109,17,0.13);
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--text); line-height: 1.7; }
+
+/* ——— SCROLLBAR ——— */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--g50); }
+::-webkit-scrollbar-thumb { background: var(--g600); border-radius: 3px; }
+
+/* ——— NAV ——— */
+nav {
+  position: sticky; top: 0; z-index: 200;
+  background: var(--g900);
+  border-bottom: 1px solid rgba(201,168,76,0.2);
+  padding: 0 2.5rem;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px;
+}
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 21px; font-weight: 500;
+  color: var(--gold-l); text-decoration: none;
+  display: flex; align-items: center; gap: 10px;
+  letter-spacing: 0.3px;
+}
+.nav-logo .cross { color: var(--gold); }
+.nav-links { display: flex; gap: 2.25rem; align-items: center; }
+.nav-links a {
+  font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+  color: rgba(240,233,218,0.55); text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--gold-l); }
+.nav-cta {
+  font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
+  background: transparent; border: 1px solid rgba(201,168,76,0.4);
+  color: var(--gold-l) !important; padding: 7px 16px; border-radius: 2px;
+  transition: background 0.2s, border-color 0.2s !important;
+}
+.nav-cta:hover { background: rgba(201,168,76,0.1) !important; border-color: var(--gold) !important; }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+.hamburger span { width: 22px; height: 1.5px; background: var(--gold-l); border-radius: 2px; transition: 0.3s; }
+@media(max-width:700px){
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .nav-links.open {
+    display: flex; flex-direction: column; gap: 0;
+    position: absolute; top: 64px; left: 0; right: 0;
+    background: var(--g900); padding: 1rem 2rem 1.5rem;
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+  }
+  .nav-links.open a { padding: 0.6rem 0; font-size: 13px; }
+}
+
+/* ——— HERO ——— */
+.hero {
+  background: var(--g900);
+  min-height: 88vh; display: flex; align-items: center;
+  position: relative; overflow: hidden;
+  padding: 6rem 2.5rem 5rem;
+}
+.hero-bg {
+  position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse 60% 55% at 70% 50%, rgba(201,168,76,0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 10% 80%, rgba(59,109,17,0.18) 0%, transparent 60%);
+}
+.hero-pattern {
+  position: absolute; inset: 0; pointer-events: none; opacity: 0.03;
+  background-image: repeating-linear-gradient(0deg, var(--gold) 0, var(--gold) 1px, transparent 0, transparent 50%),
+    repeating-linear-gradient(90deg, var(--gold) 0, var(--gold) 1px, transparent 0, transparent 50%);
+  background-size: 40px 40px;
+}
+.hero-inner {
+  position: relative; z-index: 1;
+  max-width: 1100px; margin: 0 auto; width: 100%;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+}
+@media(max-width:800px){ .hero-inner { grid-template-columns: 1fr; } }
+
+.hero-left {}
+.hero-eyebrow {
+  font-size: 10px; letter-spacing: 3.5px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 1.25rem;
+  display: flex; align-items: center; gap: 12px;
+}
+.hero-eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--gold); }
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(42px, 6vw, 72px);
+  font-weight: 300; line-height: 1.1;
+  color: var(--parch);
+  margin-bottom: 1.5rem;
+}
+.hero h1 em { font-style: italic; color: var(--gold-l); display: block; }
+.hero-desc {
+  font-size: 15px; color: rgba(240,233,218,0.6);
+  max-width: 420px; margin-bottom: 2.25rem; line-height: 1.75;
+}
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn-primary {
+  background: var(--gold); color: var(--g900);
+  border: none; border-radius: 2px;
+  padding: 12px 26px; font-size: 12px; font-weight: 500;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  cursor: pointer; text-decoration: none;
+  transition: background 0.2s;
+}
+.btn-primary:hover { background: var(--gold-l); }
+.btn-outline {
+  background: transparent; color: var(--gold-l);
+  border: 1px solid rgba(201,168,76,0.35); border-radius: 2px;
+  padding: 12px 26px; font-size: 12px; font-weight: 400;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  cursor: pointer; text-decoration: none;
+  transition: border-color 0.2s;
+}
+.btn-outline:hover { border-color: var(--gold); }
+
+.hero-right { display: flex; flex-direction: column; gap: 12px; }
+@media(max-width:800px){ .hero-right { display: none; } }
+
+.hero-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(201,168,76,0.15);
+  border-radius: 10px; padding: 1.1rem 1.25rem;
+  display: flex; gap: 14px; align-items: center;
+  cursor: pointer; text-decoration: none;
+  transition: background 0.2s, border-color 0.2s;
+}
+.hero-card:hover { background: rgba(255,255,255,0.07); border-color: rgba(201,168,76,0.35); }
+.hero-card-icon {
+  width: 44px; height: 44px; border-radius: 8px;
+  background: rgba(201,168,76,0.12);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; flex-shrink: 0;
+}
+.hero-card-tag { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 3px; }
+.hero-card-title { font-size: 13px; font-weight: 400; color: rgba(240,233,218,0.85); line-height: 1.4; }
+
+.hero-scroll {
+  position: absolute; bottom: 2.5rem; left: 50%;
+  transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  color: rgba(201,168,76,0.5); font-size: 10px; letter-spacing: 2px;
+  text-transform: uppercase; text-decoration: none;
+  animation: bounce 2s infinite;
+}
+.hero-scroll-line { width: 1px; height: 32px; background: linear-gradient(var(--gold), transparent); }
+@keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(6px)} }
+
+/* ——— STATS BAR ——— */
+.stats-bar {
+  background: var(--g800);
+  padding: 1.25rem 2.5rem;
+  display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap;
+  border-bottom: 1px solid rgba(201,168,76,0.12);
+}
+.stat { text-align: center; }
+.stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px; font-weight: 500; color: var(--gold-l);
+  line-height: 1;
+}
+.stat-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: rgba(240,233,218,0.4); margin-top: 4px; }
+
+/* ——— SECTIONS ——— */
+section { padding: 5rem 2.5rem; }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-header { margin-bottom: 2.5rem; }
+.section-eyebrow {
+  font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 0.6rem;
+}
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 4vw, 40px); font-weight: 400;
+  color: var(--g800); line-height: 1.2;
+}
+.section-title em { font-style: italic; color: var(--g600); }
+.section-sub { font-size: 14px; color: var(--text2); margin-top: 0.5rem; max-width: 480px; }
+
+/* ——— FEATURED ——— */
+.featured { background: var(--white); }
+.featured-grid {
+  display: grid; grid-template-columns: 1.6fr 1fr;
+  gap: 1.5rem;
+}
+@media(max-width:700px){ .featured-grid { grid-template-columns: 1fr; } }
+
+.feat-main {
+  background: var(--g900);
+  border-radius: 14px; overflow: hidden;
+  cursor: pointer; text-decoration: none;
+  display: block; position: relative;
+  transition: transform 0.25s;
+}
+.feat-main:hover { transform: translateY(-3px); }
+.feat-main-img {
+  height: 240px; background: var(--g800);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 64px; position: relative;
+}
+.feat-main-img::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to bottom, transparent 50%, rgba(13,31,2,0.85));
+}
+.feat-main-body { padding: 1.5rem; }
+.feat-tag {
+  font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 0.6rem;
+}
+.feat-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; font-weight: 400; color: var(--parch);
+  line-height: 1.3; margin-bottom: 0.6rem;
+}
+.feat-desc { font-size: 13px; color: rgba(240,233,218,0.55); line-height: 1.6; }
+.feat-meta { font-size: 11px; color: rgba(201,168,76,0.6); margin-top: 1rem; }
+
+.feat-side { display: flex; flex-direction: column; gap: 1rem; }
+.feat-card {
+  background: var(--cream); border: 1px solid var(--border);
+  border-radius: 10px; padding: 1.1rem 1.25rem;
+  cursor: pointer; text-decoration: none; display: block;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.feat-card:hover { border-color: var(--gold-d); box-shadow: 0 3px 14px rgba(23,52,4,0.07); }
+.feat-card-tag { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--g400); margin-bottom: 5px; }
+.feat-card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px; font-weight: 400; color: var(--g800);
+  line-height: 1.35; margin-bottom: 5px;
+}
+.feat-card-desc { font-size: 12px; color: var(--text2); line-height: 1.55; }
+.feat-card-meta { font-size: 11px; color: var(--text3); margin-top: 0.6rem; }
+
+/* ——— CATEGORIES ——— */
+.categories-section { background: var(--cream); }
+.cat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+@media(max-width:800px){ .cat-grid { grid-template-columns: repeat(2,1fr); } }
+@media(max-width:400px){ .cat-grid { grid-template-columns: 1fr; } }
+
+.cat-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 12px; padding: 1.5rem 1.25rem;
+  text-align: center; cursor: pointer; text-decoration: none;
+  display: block; transition: border-color 0.2s, transform 0.2s;
+}
+.cat-card:hover { border-color: var(--gold-d); transform: translateY(-2px); }
+.cat-icon { font-size: 32px; margin-bottom: 0.75rem; }
+.cat-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px; font-weight: 500; color: var(--g800);
+  margin-bottom: 4px;
+}
+.cat-count { font-size: 11px; color: var(--text3); letter-spacing: 1px; }
+
+/* ——— ARTICLES ——— */
+.articles-section { background: var(--white); }
+.articles-layout { display: grid; grid-template-columns: 1fr 320px; gap: 3rem; }
+@media(max-width:900px){ .articles-layout { grid-template-columns: 1fr; } }
+
+.article-filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 2rem; }
+.filter-btn {
+  font-size: 11px; letter-spacing: 1px; text-transform: uppercase;
+  background: transparent; border: 1px solid var(--border);
+  color: var(--text2); padding: 6px 14px; border-radius: 20px;
+  cursor: pointer; transition: all 0.2s;
+}
+.filter-btn.active, .filter-btn:hover {
+  background: var(--g800); color: var(--gold-l); border-color: var(--g800);
+}
+
+.articles-list { display: flex; flex-direction: column; gap: 1px; }
+.article-row {
+  display: flex; gap: 1.25rem; align-items: flex-start;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer; text-decoration: none;
+  transition: padding-left 0.2s;
+}
+.article-row:hover { padding-left: 6px; }
+.article-row:last-child { border-bottom: none; }
+.art-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px; font-weight: 300; color: var(--g50);
+  line-height: 1; min-width: 36px; flex-shrink: 0;
+  padding-top: 2px;
+}
+.art-icon {
+  width: 48px; height: 48px; border-radius: 8px;
+  background: var(--g50); display: flex; align-items: center;
+  justify-content: center; font-size: 22px; flex-shrink: 0;
+}
+.art-body { flex: 1; }
+.art-tag {
+  font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--g400); margin-bottom: 4px;
+}
+.art-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px; font-weight: 400; color: var(--g800);
+  line-height: 1.3; margin-bottom: 4px;
+}
+.art-desc { font-size: 13px; color: var(--text2); line-height: 1.55; }
+.art-meta { font-size: 11px; color: var(--text3); margin-top: 6px; }
+
+/* ——— SIDEBAR ——— */
+.sidebar { display: flex; flex-direction: column; gap: 2rem; }
+.sidebar-block {
+  background: var(--cream); border: 1px solid var(--border);
+  border-radius: 12px; padding: 1.25rem;
+}
+.sb-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px; font-weight: 500; color: var(--g800);
+  margin-bottom: 1rem; padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+.sb-item {
+  display: flex; gap: 10px; align-items: flex-start;
+  padding: 0.6rem 0; border-bottom: 1px solid rgba(59,109,17,0.07);
+  cursor: pointer; text-decoration: none;
+}
+.sb-item:last-child { border-bottom: none; padding-bottom: 0; }
+.sb-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+.sb-name { font-size: 13px; color: var(--g800); line-height: 1.4; }
+.sb-sub { font-size: 11px; color: var(--text3); }
+
+.newsletter-block {
+  background: var(--g800); border-radius: 12px; padding: 1.5rem;
+  text-align: center;
+}
+.nl-icon { font-size: 28px; margin-bottom: 0.75rem; }
+.nl-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px; font-weight: 400; color: var(--parch);
+  margin-bottom: 0.5rem;
+}
+.nl-desc { font-size: 12px; color: rgba(240,233,218,0.55); margin-bottom: 1.1rem; line-height: 1.6; }
+.nl-input {
+  width: 100%; background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(201,168,76,0.25); border-radius: 4px;
+  padding: 9px 12px; font-size: 13px; color: var(--parch);
+  font-family: 'Jost', sans-serif; margin-bottom: 8px;
+  outline: none;
+}
+.nl-input::placeholder { color: rgba(240,233,218,0.3); }
+.nl-input:focus { border-color: var(--gold); }
+.nl-btn {
+  width: 100%; background: var(--gold); color: var(--g900);
+  border: none; border-radius: 4px; padding: 10px;
+  font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
+  font-weight: 500; cursor: pointer; font-family: 'Jost', sans-serif;
+  transition: background 0.2s;
+}
+.nl-btn:hover { background: var(--gold-l); }
+
+/* ——— HIGHLIGHT BANNER ——— */
+.highlight { background: var(--g800); }
+.highlight-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
+  align-items: center;
+}
+@media(max-width:700px){ .highlight-inner { grid-template-columns: 1fr; } }
+.highlight-text {}
+.highlight-eyebrow { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+.highlight-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 4vw, 42px); font-weight: 300;
+  color: var(--parch); line-height: 1.2; margin-bottom: 1rem;
+}
+.highlight-title em { font-style: italic; color: var(--gold-l); }
+.highlight-desc { font-size: 14px; color: rgba(240,233,218,0.6); line-height: 1.75; margin-bottom: 1.5rem; }
+.highlight-steps { display: flex; flex-direction: column; gap: 0.75rem; }
+.h-step { display: flex; gap: 12px; align-items: flex-start; }
+.h-step-num {
+  width: 24px; height: 24px; border-radius: 50%;
+  background: rgba(201,168,76,0.15); color: var(--gold-l);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; flex-shrink: 0; margin-top: 2px;
+}
+.h-step-text { font-size: 13px; color: rgba(240,233,218,0.65); line-height: 1.6; }
+.h-step-text strong { color: var(--gold-l); font-weight: 500; }
+
+/* ——— ABOUT ——— */
+.about-section { background: var(--cream); }
+.about-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;
+}
+@media(max-width:700px){ .about-grid { grid-template-columns: 1fr; } }
+.about-visual {
+  background: var(--g900); border-radius: 16px; padding: 3rem 2rem;
+  text-align: center; position: relative; overflow: hidden;
+}
+.about-visual::before {
+  content: '✝'; font-family: 'Cormorant Garamond', serif;
+  position: absolute; font-size: 160px; color: rgba(201,168,76,0.06);
+  top: -20px; right: -20px; line-height: 1; pointer-events: none;
+}
+.about-emblem { font-size: 64px; margin-bottom: 1rem; }
+.about-visual-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px; font-weight: 400; color: var(--gold-l);
+  margin-bottom: 0.5rem;
+}
+.about-visual-sub { font-size: 12px; color: rgba(240,233,218,0.4); letter-spacing: 1px; }
+.about-divider {
+  width: 40px; height: 1px; background: var(--gold);
+  margin: 1.25rem auto;
+}
+.about-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px; font-style: italic; font-weight: 300;
+  color: rgba(240,233,218,0.6); line-height: 1.8;
+}
+.about-text {}
+.about-p { font-size: 14px; color: var(--text2); line-height: 1.8; margin-bottom: 1.1rem; }
+.about-p strong { color: var(--g700); font-weight: 500; }
+.about-values { display: flex; flex-direction: column; gap: 0.6rem; margin-top: 1.5rem; }
+.av-item { display: flex; gap: 10px; align-items: center; }
+.av-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+.av-text { font-size: 13px; color: var(--text2); }
+
+/* ——— CONTACT ——— */
+.contact-section { background: var(--white); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+@media(max-width:700px){ .contact-grid { grid-template-columns: 1fr; } }
+.contact-info {}
+.contact-info p { font-size: 14px; color: var(--text2); line-height: 1.8; margin-bottom: 1.5rem; }
+.contact-items { display: flex; flex-direction: column; gap: 1rem; }
+.ci { display: flex; gap: 12px; align-items: center; }
+.ci-icon {
+  width: 38px; height: 38px; border-radius: 8px;
+  background: var(--g50); display: flex; align-items: center;
+  justify-content: center; font-size: 18px; flex-shrink: 0;
+}
+.ci-label { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text3); }
+.ci-value { font-size: 13px; color: var(--g800); }
+
+.contact-form { display: flex; flex-direction: column; gap: 12px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media(max-width:500px){ .form-row { grid-template-columns: 1fr; } }
+label { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text3); display: block; margin-bottom: 5px; }
+input[type=text], input[type=email], textarea, select {
+  width: 100%; background: var(--cream); border: 1px solid var(--border);
+  border-radius: 6px; padding: 10px 14px; font-size: 13px;
+  color: var(--text); font-family: 'Jost', sans-serif;
+  outline: none; transition: border-color 0.2s;
+}
+input:focus, textarea:focus, select:focus { border-color: var(--g400); }
+textarea { min-height: 110px; resize: vertical; }
+.form-submit {
+  background: var(--g800); color: var(--gold-l);
+  border: none; border-radius: 6px;
+  padding: 12px 28px; font-size: 11px; letter-spacing: 2px;
+  text-transform: uppercase; font-weight: 500;
+  cursor: pointer; font-family: 'Jost', sans-serif;
+  transition: background 0.2s; align-self: flex-start;
+}
+.form-submit:hover { background: var(--g700); }
+
+/* ——— FOOTER ——— */
+footer {
+  background: var(--g900);
+  border-top: 1px solid rgba(201,168,76,0.12);
+}
+.footer-main {
+  max-width: 1100px; margin: 0 auto;
+  padding: 4rem 2.5rem 3rem;
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem;
+}
+@media(max-width:900px){ .footer-main { grid-template-columns: 1fr 1fr; } }
+@media(max-width:500px){ .footer-main { grid-template-columns: 1fr; } }
+.footer-brand {}
+.footer-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; font-weight: 500; color: var(--gold-l);
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 1rem;
+}
+.footer-desc { font-size: 13px; color: rgba(240,233,218,0.4); line-height: 1.75; max-width: 260px; }
+.footer-col-title {
+  font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 1rem;
+}
+.footer-links { display: flex; flex-direction: column; gap: 8px; }
+.footer-links a {
+  font-size: 13px; color: rgba(240,233,218,0.45); text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--gold-l); }
+.footer-bottom {
+  border-top: 1px solid rgba(201,168,76,0.08);
+  padding: 1.5rem 2.5rem;
+  max-width: 1100px; margin: 0 auto;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 0.5rem;
+}
+.footer-copy { font-size: 12px; color: rgba(240,233,218,0.25); }
+.footer-jose { font-size: 12px; color: rgba(201,168,76,0.4); }
+
+/* ——— ANIMATIONS ——— */
+.fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* ——— BACK TO TOP ——— */
+.back-top {
+  position: fixed; bottom: 2rem; right: 2rem; z-index: 100;
+  width: 42px; height: 42px; border-radius: 50%;
+  background: var(--g800); border: 1px solid rgba(201,168,76,0.3);
+  color: var(--gold); font-size: 18px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; text-decoration: none;
+  opacity: 0; transition: opacity 0.3s, transform 0.2s;
+  transform: translateY(10px);
+}
+.back-top.show { opacity: 1; transform: translateY(0); }
+.back-top:hover { background: var(--g700); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="top">
+  <a class="nav-logo" href="#top">
+    <span class="cross">✝</span> Caminho da Consagração
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a href="#consagracoes">Consagrações</a>
+    <a href="#artigos">Artigos</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#contato" class="nav-cta">Contato</a>
+  </div>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-eyebrow">Sob a proteção de São José</div>
+      <h1>O <em>Caminho</em> da Consagração</h1>
+      <p class="hero-desc">Aprenda o significado, a história e o passo a passo das grandes consagrações da Igreja Católica. Fé que transforma a vida.</p>
+      <div class="hero-actions">
+        <a href="#consagracoes" class="btn-primary">Ver Consagrações</a>
+        <a href="#sobre" class="btn-outline">Sobre o Blog</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <a class="hero-card" href="consagracao-sao-miguel.html">
+        <div class="hero-card-icon">⚔️</div>
+        <div>
+          <div class="hero-card-tag">Arcanjos</div>
+          <div class="hero-card-title">Consagração a São Miguel Arcanjo — 9 dias de preparo</div>
+        </div>
+      </a>
+      <a class="hero-card" href="#">
+        <div class="hero-card-icon">🌹</div>
+        <div>
+          <div class="hero-card-tag">Mariana</div>
+          <div class="hero-card-title">Consagração a Nossa Senhora — método de São Luís de Montfort</div>
+        </div>
+      </a>
+      <a class="hero-card" href="#">
+        <div class="hero-card-icon">🕊️</div>
+        <div>
+          <div class="hero-card-tag">São José</div>
+          <div class="hero-card-title">Consagração da família a São José — oração e ritual completo</div>
+        </div>
+      </a>
+      <a class="hero-card" href="#">
+        <div class="hero-card-icon">❤️</div>
+        <div>
+          <div class="hero-card-tag">Sagrado Coração</div>
+          <div class="hero-card-title">Consagração ao Sagrado Coração de Jesus</div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <a class="hero-scroll" href="#featured">
+    <span>Explorar</span>
+    <div class="hero-scroll-line"></div>
+  </a>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat"><div class="stat-num">24</div><div class="stat-label">Consagrações</div></div>
+  <div class="stat"><div class="stat-num">60+</div><div class="stat-label">Artigos</div></div>
+  <div class="stat"><div class="stat-num">2.000+</div><div class="stat-label">Fiéis</div></div>
+  <div class="stat"><div class="stat-num">400+</div><div class="stat-label">Anos de história</div></div>
+</div>
+
+<!-- FEATURED -->
+<section class="featured" id="featured">
+  <div class="section-inner">
+    <div class="section-header fade-in">
+      <div class="section-eyebrow">Em destaque</div>
+      <h2 class="section-title">Consagrações <em>mais lidas</em></h2>
+    </div>
+    <div class="featured-grid fade-in">
+      <a class="feat-main" href="consagracao-sao-miguel.html">
+        <div class="feat-main-img">⚔️</div>
+        <div class="feat-main-body">
+          <div class="feat-tag">Arcanjos · Em destaque</div>
+          <div class="feat-title">Consagração a São Miguel Arcanjo — passo a passo completo</div>
+          <div class="feat-desc">Da novena de 9 dias à oração final de consagração, aprenda como se colocar sob a proteção do Príncipe das Milícias Celestes.</div>
+          <div class="feat-meta">12 abr 2025 · 8 min de leitura</div>
+        </div>
+      </a>
+      <div class="feat-side">
+        <a class="feat-card" href="#">
+          <div class="feat-card-tag">Mariana</div>
+          <div class="feat-card-title">Consagração a Nossa Senhora pelo método de São Luís de Montfort</div>
+          <div class="feat-card-desc">33 dias de preparo espiritual para a consagração total à Virgem Maria.</div>
+          <div class="feat-card-meta">5 abr 2025 · 12 min</div>
+        </a>
+        <a class="feat-card" href="#">
+          <div class="feat-card-tag">São José</div>
+          <div class="feat-card-title">Consagração da família a São José — ritual completo</div>
+          <div class="feat-card-desc">Coloque seu lar sob a proteção do pai adotivo de Jesus com esta consagração familiar.</div>
+          <div class="feat-card-meta">28 mar 2025 · 6 min</div>
+        </a>
+        <a class="feat-card" href="#">
+          <div class="feat-card-tag">Sagrado Coração</div>
+          <div class="feat-card-title">Consagração ao Sagrado Coração de Jesus</div>
+          <div class="feat-card-desc">A devoção revelada a Santa Margarida Maria Alacoque e como praticá-la hoje.</div>
+          <div class="feat-card-meta">20 mar 2025 · 7 min</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="categories-section" id="consagracoes">
+  <div class="section-inner">
+    <div class="section-header fade-in">
+      <div class="section-eyebrow">Categorias</div>
+      <h2 class="section-title">Explore por <em>devoção</em></h2>
+      <p class="section-sub">Encontre a consagração certa para o seu momento espiritual.</p>
+    </div>
+    <div class="cat-grid fade-in">
+      <a class="cat-card" href="pages/categoria-marianas.html">
+        <div class="cat-icon">🌹</div>
+        <div class="cat-name">Marianas</div>
+        <div class="cat-count">8 consagrações</div>
+      </a>
+      <a class="cat-card" href="pages/categoria-sagrado-coracao.html">
+        <div class="cat-icon">❤️</div>
+        <div class="cat-name">Sagrado Coração</div>
+        <div class="cat-count">5 consagrações</div>
+      </a>
+      <a class="cat-card" href="pages/categoria-sao-jose.html">
+        <div class="cat-icon">🕊️</div>
+        <div class="cat-name">São José</div>
+        <div class="cat-count">4 consagrações</div>
+      </a>
+      <a class="cat-card" href="pages/categoria-arcanjos.html">
+        <div class="cat-icon">⚔️</div>
+        <div class="cat-name">Arcanjos</div>
+        <div class="cat-count">3 consagrações</div>
+      </a>
+      <a class="cat-card" href="pages/categoria-familia.html">
+        <div class="cat-icon">🏠</div>
+        <div class="cat-name">Família</div>
+        <div class="cat-count">6 consagrações</div>
+      </a>
+      <a class="cat-card" href="pages/categoria-novenas.html">
+        <div class="cat-icon">📿</div>
+        <div class="cat-name">Novenas</div>
+        <div class="cat-count">12 novenas</div>
+      </a>
+      <a class="cat-card" href="pages/categoria-igreja.html">
+        <div class="cat-icon">⛪</div>
+        <div class="cat-name">Igreja</div>
+        <div class="cat-count">4 artigos</div>
+      </a>
+      <a class="cat-card" href="pages/categoria-sacramentais.html">
+        <div class="cat-icon">✝️</div>
+        <div class="cat-name">Sacramentais</div>
+        <div class="cat-count">5 artigos</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLES -->
+<section class="articles-section" id="artigos">
+  <div class="section-inner">
+    <div class="section-header fade-in">
+      <div class="section-eyebrow">Blog</div>
+      <h2 class="section-title">Artigos <em>recentes</em></h2>
+    </div>
+    <div class="articles-layout">
+      <div>
+        <div class="article-filters fade-in">
+          <button class="filter-btn active">Todos</button>
+          <button class="filter-btn">Marianas</button>
+          <button class="filter-btn">São José</button>
+          <button class="filter-btn">Sagrado Coração</button>
+          <button class="filter-btn">Arcanjos</button>
+        </div>
+        <div class="articles-list fade-in">
+          <a class="article-row" href="consagracao-sao-miguel.html">
+            <div class="art-icon">⚔️</div>
+            <div class="art-body">
+              <div class="art-tag">Arcanjos</div>
+              <div class="art-title">Consagração a São Miguel Arcanjo — novena e oração completa</div>
+              <div class="art-desc">Passo a passo detalhado com a novena de 9 dias e a oração de consagração.</div>
+              <div class="art-meta">12 abr 2025 · 8 min</div>
+            </div>
+          </a>
+          <a class="article-row" href="#">
+            <div class="art-icon">🌹</div>
+            <div class="art-body">
+              <div class="art-tag">Mariana</div>
+              <div class="art-title">Consagração a Nossa Senhora — método de São Luís de Montfort</div>
+              <div class="art-desc">O método dos 33 dias de Montfort é um dos mais completos caminhos de consagração mariana da história da Igreja.</div>
+              <div class="art-meta">5 abr 2025 · 12 min</div>
+            </div>
+          </a>
+          <a class="article-row" href="#">
+            <div class="art-icon">🕊️</div>
+            <div class="art-body">
+              <div class="art-tag">São José</div>
+              <div class="art-title">Consagração da família a São José — oração e ritual completo</div>
+              <div class="art-desc">Como reunir a família, preparar o oratório e realizar esta bela consagração ao protetor dos lares cristãos.</div>
+              <div class="art-meta">28 mar 2025 · 6 min</div>
+            </div>
+          </a>
+          <a class="article-row" href="#">
+            <div class="art-icon">📿</div>
+            <div class="art-body">
+              <div class="art-tag">Introdução</div>
+              <div class="art-title">O que é uma consagração? Diferença entre promessa, voto e consagração</div>
+              <div class="art-desc">Muitos fiéis confundem esses termos. Entenda o que a Igreja ensina sobre cada um deles.</div>
+              <div class="art-meta">20 mar 2025 · 5 min</div>
+            </div>
+          </a>
+          <a class="article-row" href="#">
+            <div class="art-icon">⭐</div>
+            <div class="art-body">
+              <div class="art-tag">Mariana</div>
+              <div class="art-title">Consagração ao Imaculado Coração de Maria — método de Fátima</div>
+              <div class="art-desc">A consagração pedida pela própria Nossa Senhora às três pastorinhas em 1917 e como realizá-la hoje.</div>
+              <div class="art-meta">14 mar 2025 · 7 min</div>
+            </div>
+          </a>
+          <a class="article-row" href="#">
+            <div class="art-icon">🏠</div>
+            <div class="art-body">
+              <div class="art-tag">Família</div>
+              <div class="art-title">Como preparar um altar doméstico para a consagração</div>
+              <div class="art-desc">Dicas práticas para montar um oratório em casa que favoreça a oração e a devoção familiar.</div>
+              <div class="art-meta">7 mar 2025 · 4 min</div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="sidebar fade-in">
+        <div class="sidebar-block">
+          <div class="sb-title">Consagrações populares</div>
+          <a class="sb-item" href="consagracao-sao-miguel.html">
+            <div class="sb-icon">⚔️</div>
+            <div>
+              <div class="sb-name">São Miguel Arcanjo</div>
+              <div class="sb-sub">9 dias · Proteção espiritual</div>
+            </div>
+          </a>
+          <a class="sb-item" href="#">
+            <div class="sb-icon">🌹</div>
+            <div>
+              <div class="sb-name">Nossa Senhora (Montfort)</div>
+              <div class="sb-sub">33 dias · Consagração total</div>
+            </div>
+          </a>
+          <a class="sb-item" href="#">
+            <div class="sb-icon">❤️</div>
+            <div>
+              <div class="sb-name">Sagrado Coração de Jesus</div>
+              <div class="sb-sub">9 dias · Primeira sexta-feira</div>
+            </div>
+          </a>
+          <a class="sb-item" href="#">
+            <div class="sb-icon">🕊️</div>
+            <div>
+              <div class="sb-name">Família a São José</div>
+              <div class="sb-sub">Celebração familiar</div>
+            </div>
+          </a>
+        </div>
+        <div class="newsletter-block">
+          <div class="nl-icon">✉️</div>
+          <div class="nl-title">Receba novidades</div>
+          <div class="nl-desc">Novas consagrações, datas litúrgicas e artigos de espiritualidade diretamente no seu e-mail.</div>
+          <input class="nl-input" type="email" placeholder="seu@email.com">
+          <button class="nl-btn">Inscrever-se</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HIGHLIGHT -->
+<section class="highlight" style="padding: 5rem 2.5rem;">
+  <div class="highlight-inner">
+    <div class="highlight-text fade-in">
+      <div class="highlight-eyebrow">Como funciona</div>
+      <h2 class="highlight-title">Da leitura à <em>consagração</em></h2>
+      <p class="highlight-desc">Cada artigo deste blog é um guia completo — não apenas uma explicação teológica, mas um caminho prático para que você realize a consagração com preparo e devoção.</p>
+      <div class="highlight-steps">
+        <div class="h-step">
+          <div class="h-step-num">1</div>
+          <div class="h-step-text"><strong>Escolha a consagração</strong> que ressoa com sua devoção ou necessidade espiritual do momento.</div>
+        </div>
+        <div class="h-step">
+          <div class="h-step-num">2</div>
+          <div class="h-step-text"><strong>Siga o preparo</strong> indicado — novena, confissão, oratório — com o passo a passo detalhado.</div>
+        </div>
+        <div class="h-step">
+          <div class="h-step-num">3</div>
+          <div class="h-step-text"><strong>Realize a consagração</strong> com a oração e os gestos indicados pela tradição da Igreja.</div>
+        </div>
+        <div class="h-step">
+          <div class="h-step-num">4</div>
+          <div class="h-step-text"><strong>Viva a devoção</strong> no dia a dia com as dicas de como renovar e aprofundar seu compromisso.</div>
+        </div>
+      </div>
+    </div>
+    <div class="fade-in" style="display:flex;flex-direction:column;gap:1rem;">
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.2);border-radius:12px;padding:1.5rem;">
+        <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;">Próxima festa litúrgica</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--parch);margin-bottom:4px;">São José Operário</div>
+        <div style="font-size:13px;color:rgba(240,233,218,0.5);">1 de maio · Padroeiro dos trabalhadores</div>
+        <div style="margin-top:1rem;font-size:13px;color:rgba(240,233,218,0.45);line-height:1.6;">Momento ideal para a consagração familiar a São José.</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(201,168,76,0.2);border-radius:12px;padding:1.5rem;">
+        <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;">Dica espiritual</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:rgba(240,233,218,0.7);line-height:1.75;">"A consagração é o ato mais perfeito de adoração que um ser humano pode oferecer a Deus."</div>
+        <div style="font-size:11px;color:rgba(201,168,76,0.5);margin-top:0.75rem;">— São Luís Maria Grignion de Montfort</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="sobre">
+  <div class="section-inner">
+    <div class="section-header fade-in">
+      <div class="section-eyebrow">Sobre o blog</div>
+      <h2 class="section-title">Um caminho de <em>fé e devoção</em></h2>
+    </div>
+    <div class="about-grid fade-in">
+      <div class="about-visual">
+        <div class="about-emblem">🌿</div>
+        <div class="about-visual-title">Caminho da Consagração</div>
+        <div class="about-visual-sub">Sob a proteção de São José</div>
+        <div class="about-divider"></div>
+        <div class="about-quote">"Sede santos, porque Eu, o Senhor vosso Deus, sou santo."<br><span style="font-size:13px;font-style:normal;color:rgba(201,168,76,0.5);margin-top:6px;display:block;">— Levítico 19,2</span></div>
+      </div>
+      <div class="about-text">
+        <p class="about-p">O <strong>Caminho da Consagração</strong> nasceu do desejo de tornar acessível a riqueza espiritual das consagrações católicas, ajudando fiéis a conhecerem, prepararem e realizarem esses atos de entrega a Deus.</p>
+        <p class="about-p">Cada consagração é apresentada com <strong>profundidade histórica e teológica</strong>, mas também com orientações práticas e acessíveis — para que qualquer fiel, independente do nível de formação, possa percorrer esse caminho.</p>
+        <p class="about-p">O blog é inspirado na devoção a <strong>São José</strong>, o silencioso servidor de Deus, guardião da Sagrada Família e modelo de vida consagrada no cotidiano.</p>
+        <div class="about-values">
+          <div class="av-item"><div class="av-dot"></div><div class="av-text">Fidelidade ao magistério da Igreja Católica</div></div>
+          <div class="av-item"><div class="av-dot"></div><div class="av-text">Linguagem acessível, sem perder profundidade</div></div>
+          <div class="av-item"><div class="av-dot"></div><div class="av-text">Devoção enraizada na tradição e nos santos</div></div>
+          <div class="av-item"><div class="av-dot"></div><div class="av-text">Conteúdo prático e espiritual ao mesmo tempo</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contato">
+  <div class="section-inner">
+    <div class="section-header fade-in">
+      <div class="section-eyebrow">Contato</div>
+      <h2 class="section-title">Fale <em>conosco</em></h2>
+      <p class="section-sub">Dúvidas, sugestões de consagrações ou pedidos de oração — estamos aqui.</p>
+    </div>
+    <div class="contact-grid fade-in">
+      <div class="contact-info">
+        <p>Tem alguma consagração que gostaria de ver no blog? Uma dúvida sobre como realizar um rito? Ou simplesmente quer nos contar sua experiência espiritual? Escreva para nós.</p>
+        <div class="contact-items">
+          <div class="ci">
+            <div class="ci-icon">✉️</div>
+            <div>
+              <div class="ci-label">E-mail</div>
+              <div class="ci-value">contato@caminhodaconsagracao.com.br</div>
+            </div>
+          </div>
+          <div class="ci">
+            <div class="ci-icon">📖</div>
+            <div>
+              <div class="ci-label">Pedidos de oração</div>
+              <div class="ci-value">Use o formulário ao lado</div>
+            </div>
+          </div>
+          <div class="ci">
+            <div class="ci-icon">🕊️</div>
+            <div>
+              <div class="ci-label">Sugestões</div>
+              <div class="ci-value">Toda devoção é bem-vinda</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form" onsubmit="handleForm(event)">
+        <div class="form-row">
+          <div>
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" placeholder="Seu nome">
+          </div>
+          <div>
+            <label for="email">E-mail</label>
+            <input type="email" id="email" placeholder="seu@email.com">
+          </div>
+        </div>
+        <div>
+          <label for="assunto">Assunto</label>
+          <select id="assunto">
+            <option value="">Selecione...</option>
+            <option>Sugestão de consagração</option>
+            <option>Pedido de oração</option>
+            <option>Dúvida espiritual</option>
+            <option>Outros</option>
+          </select>
+        </div>
+        <div>
+          <label for="msg">Mensagem</label>
+          <textarea id="msg" placeholder="Sua mensagem..."></textarea>
+        </div>
+        <button type="submit" class="form-submit">Enviar mensagem</button>
+        <div id="form-ok" style="display:none;font-size:13px;color:var(--g600);padding:8px 0;">✓ Mensagem enviada! Responderemos em breve.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-main">
+    <div class="footer-brand">
+      <div class="footer-logo">✝ Caminho da Consagração</div>
+      <p class="footer-desc">Um espaço de fé para auxiliar fiéis a conhecerem e viverem as consagrações da Igreja Católica, sob a intercessão de São José.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Consagrações</div>
+      <div class="footer-links">
+        <a href="#">São Miguel Arcanjo</a>
+        <a href="#">Nossa Senhora</a>
+        <a href="#">Sagrado Coração</a>
+        <a href="#">São José</a>
+        <a href="#">Imaculado Coração</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Blog</div>
+      <div class="footer-links">
+        <a href="#">Artigos recentes</a>
+        <a href="#">Novenas</a>
+        <a href="#">Datas litúrgicas</a>
+        <a href="#">Sacramentais</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Mais</div>
+      <div class="footer-links">
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+        <a href="#">Política de privacidade</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2025 Caminho da Consagração</span>
+    <span class="footer-jose">🌿 Sob a proteção de São José</span>
+  </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<a class="back-top" id="backTop" href="#top">↑</a>
+
+<script>
+  // Intersection Observer - fade in
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 100);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Filter buttons
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+
+  // Back to top
+  const backTop = document.getElementById('backTop');
+  window.addEventListener('scroll', () => {
+    backTop.classList.toggle('show', window.scrollY > 400);
+  });
+
+  // Mobile menu
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+
+  // Form submit
+  function handleForm(e) {
+    e.preventDefault();
+    document.getElementById('form-ok').style.display = 'block';
+    e.target.querySelectorAll('input,textarea,select').forEach(f => f.value = '');
+  }
+</script>
+</body>
+</html>
